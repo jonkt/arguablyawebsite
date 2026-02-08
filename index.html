@@ -25,21 +25,22 @@
 
     <main>
         <section class="product-showcase" id="postlens">
+            <div class="product-bg-container"></div>
             <div class="product-content">
                 <div class="product-badge">New Release</div>
                 <h2 class="product-title">PostLens</h2>
                 <h3 class="product-subtitle">Your Email, Visualized.</h3>
                 <p class="product-description">
-                    Unlock the hidden patterns in your communication. PostLens transforms your Outlook archives into
-                    interactive insights,
-                    respecting your privacy by processing everything locally.
+                    Unlock the hidden patterns in your communication. PostLens transforms your email into
+                    interactive insights, respecting your privacy by processing everything locally.
                 </p>
 
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🔒</div>
                         <h4>100% Private</h4>
-                        <p>Your data never leaves your device. PostLens analyzes local PST/OST files directly.</p>
+                        <p>Your data never leaves your device. PostLens analyzes local Outlook PST/OST files directly.
+                        </p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -53,7 +54,7 @@
                             </svg>
                         </div>
                         <h4>Deep Insights</h4>
-                        <p>Explore social graphs, response times, and communication habits with beautiful charts.</p>
+                        <p>Explore social graphs, response times, and communication habits with interactive charts.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">💼</div>
@@ -68,7 +69,17 @@
                 </div>
 
                 <div class="cta-container">
-                    <a href="https://github.com/jonkt/arguablyawebsite/releases/download/v0.9.1/PostLens-0.9.1.exe" class="btn btn-primary">Download v0.9.1 (Preview Release)</a>
+                    <a href="https://github.com/jonkt/arguablyawebsite/releases/download/v0.9.1/PostLens-0.9.1.exe"
+                        class="btn btn-primary">Download v0.9.1 (Preview Release)</a>
+
+                    <div class="tooltip-container">
+                        <button class="btn btn-secondary tooltip-trigger">Don't use Outlook?</button>
+                        <div class="tooltip-text">
+                            No worries! Outlook is free from Microsoft, and is probably already on your PC.
+                            Open it, add your email account, and wait for your emails to sync.
+                            Once they have, run PostLens to analyze your email!
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -94,6 +105,19 @@
     <footer class="site-footer">
         <p>&copy; 2026 Arguably Limited. All rights reserved.</p>
     </footer>
+
+    <div id="smartscreen-modal" class="modal">
+        <div class="modal-content">
+            <h3>A word of warning</h3>
+            <p>You may see a Microsoft SmartScreen warning when you first run PostLens because I am a solo developer
+                and haven't paid for an expensive code signing certificate.</p>
+            <p>You can get past it by clicking <strong>"More Info"</strong> and then <strong>"Run Anyway"</strong></p>
+            <div class="cta-container" style="justify-content: center; margin-top: 1.5rem;">
+                <button id="proceed-download" class="btn btn-primary">I Understand, Download Anyway</button>
+                <button id="cancel-download" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

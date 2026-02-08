@@ -67,3 +67,35 @@ updateCarousel();
 
 // Auto-cycle every 4 seconds
 setInterval(updateCarousel, 4000);
+
+// SmartScreen Modal Logic
+const downloadBtn = document.querySelector('.btn-primary');
+const modal = document.getElementById('smartscreen-modal');
+const proceedBtn = document.getElementById('proceed-download');
+const cancelBtn = document.getElementById('cancel-download');
+
+if (downloadBtn && modal && proceedBtn && cancelBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+        // Check if the button is the download button (it should be the first btn-primary)
+        if (e.target.textContent.includes('Download')) {
+            e.preventDefault();
+            modal.classList.add('active');
+        }
+    });
+
+    proceedBtn.addEventListener('click', () => {
+        window.location.href = downloadBtn.href;
+        modal.classList.remove('active');
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    // Close on click outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+}
