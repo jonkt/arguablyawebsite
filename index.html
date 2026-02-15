@@ -20,7 +20,19 @@
             </div>
             <h1 class="brand-name">Arguably Limited</h1>
         </div>
+
         <p class="mission-statement">Making software no one asked for</p>
+
+        <nav class="app-nav">
+            <a href="#postlens" class="app-nav-item">
+                <img src="assets/postlens_icon.png" alt="PostLens">
+                <span>PostLens</span>
+            </a>
+            <a href="#weatherlight" class="app-nav-item">
+                <img src="assets/weatherlight_icon.png" alt="WeatherLight">
+                <span>WeatherLight</span>
+            </a>
+        </nav>
     </header>
 
     <main>
@@ -29,7 +41,7 @@
             <div class="product-content">
                 <div class="product-badge">New Release</div>
                 <h2 class="product-title">PostLens</h2>
-                <h3 class="product-subtitle">Your Email, Visualized.</h3>
+                <h3 class="product-subtitle">Your email, visualized.</h3>
                 <p class="product-description">
                     Unlock the hidden patterns in your communication. PostLens transforms your email into
                     interactive insights, respecting your privacy by processing everything locally.
@@ -70,7 +82,7 @@
 
                 <div class="cta-container">
                     <a href="https://github.com/jonkt/arguablyawebsite/releases/download/v0.9.1/PostLens-0.9.1.exe"
-                        class="btn btn-primary">Download v0.9.1 (Preview Release)</a>
+                        class="btn btn-primary">Download PostLens v0.9.1 (Preview Release)</a>
 
                     <div class="tooltip-container">
                         <button class="btn btn-secondary tooltip-trigger">Don't use Outlook?</button>
@@ -100,26 +112,88 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer class="site-footer">
-        <p>&copy; 2026 Arguably Limited. All rights reserved.</p>
-    </footer>
+        <div class="section-divider"></div>
 
-    <div id="smartscreen-modal" class="modal">
-        <div class="modal-content">
-            <h3>A word of warning</h3>
-            <p>You may see a Microsoft SmartScreen warning when you first run PostLens because I am a solo developer
-                and haven't paid for an expensive code signing certificate.</p>
-            <p>You can get past it by clicking <strong>"More Info"</strong> and then <strong>"Run Anyway"</strong></p>
-            <div class="cta-container" style="justify-content: center; margin-top: 1.5rem;">
-                <button id="proceed-download" class="btn btn-primary">I Understand, Download Anyway</button>
-                <button id="cancel-download" class="btn btn-secondary">Cancel</button>
+        <section class="product-showcase" id="weatherlight">
+            <div class="product-bg-container"
+                style="background: radial-gradient(circle at center, rgba(129, 140, 248, 0.1), transparent 70%);"></div>
+            <div class="product-content">
+                <div class="product-badge"
+                    style="background: rgba(129, 140, 248, 0.2); color: var(--accent-secondary);">New
+                    Release</div>
+                <h2 class="product-title">WeatherLight</h2>
+                <h3 class="product-subtitle">Visualize your weather forecast.</h3>
+                <p class="product-description">
+                    Enjoy a glanceable weather forecast using your Kuando Busylight. Freeware that runs quietly in the
+                    background, and
+                    also displays the forecast in your system tray.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌡️</div>
+                        <h4>Simple Viz</h4>
+                        <p>Color for temperature, pulsing for precipitation. Know what to expect in an instant.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h4>Automatic Setup</h4>
+                        <p>Automatically detects your location and weather forecast. Customizable to your liking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔌</div>
+                        <h4>Hardware Ready</h4>
+                        <p>Native integration with Kuando Busylight. Plug-and-play support with auto-detection.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h4>Portable App</h4>
+                        <p>Unobtrusive design that sits in your system tray. No installation required.</p>
+                    </div>
+
+                </div>
+
+                <div class="cta-container">
+                    <a href="https://github.com/jonkt/arguablyawebsite/releases/download/v1.0.0/WeatherLight-1.0.exe" class="btn btn-primary">Download WeatherLight v1.0 (Windows Only)</a>
+
+                    <div class="tooltip-container">
+                        <button class="btn btn-secondary tooltip-trigger">Don't have a Kuando Busylight?</button>
+                        <div class="tooltip-text">
+                            No worries! WeatherLight will still work, and will show you the weather forecast in the
+                            system tray.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-visual">
+                <img src="assets/Busylight-GIF.gif" alt="WeatherLight Demo"
+                    style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+
+        <!-- Footer was here -->
+        <footer class="site-footer">
+            <p>&copy; 2026 Arguably Limited. All rights reserved.</p>
+        </footer>
+
+        <div id="smartscreen-modal" class="modal">
+            <div class="modal-content">
+                <h3>A word of warning</h3>
+                <p>You may see a Microsoft SmartScreen warning when you first run PostLens because I am a solo developer
+                    and haven't paid for an expensive code signing certificate.</p>
+                <p>You can get past it by clicking <strong>"More Info"</strong> and then <strong>"Run Anyway"</strong>
+                </p>
+                <div class="cta-container" style="justify-content: center; margin-top: 1.5rem;">
+                    <button id="proceed-download" class="btn btn-primary">I Understand, Download Anyway</button>
+                    <button id="cancel-download" class="btn btn-secondary">Cancel</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

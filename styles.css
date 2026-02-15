@@ -16,7 +16,12 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    line-height: 1.6;
     overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Header */
@@ -84,11 +89,57 @@ body {
     margin-top: 0.5rem;
 }
 
+/* App Navigation */
+.app-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.app-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    transition: all 0.2s ease;
+    width: 100px;
+}
+
+.app-nav-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-color);
+}
+
+.app-nav-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.app-nav-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
 /* Main Content */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Product Section */
@@ -478,6 +529,20 @@ main {
     border-width: 8px;
     border-style: solid;
     border-color: var(--accent-color) transparent transparent transparent;
+}
+
+/* Section Divider */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--card-border), transparent);
+    width: 100%;
+    margin: 0;
+}
+
+.product-hero.secondary {
+    background: var(--card-bg);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 /* Modal */
