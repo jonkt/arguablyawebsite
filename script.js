@@ -69,33 +69,43 @@ updateCarousel();
 setInterval(updateCarousel, 4000);
 
 // SmartScreen Modal Logic
-const downloadBtn = document.querySelector('.btn-primary');
+// SmartScreen Modal Logic
+const downloadBtns = document.querySelectorAll('.btn-primary');
 const modal = document.getElementById('smartscreen-modal');
 const proceedBtn = document.getElementById('proceed-download');
 const cancelBtn = document.getElementById('cancel-download');
 
-if (downloadBtn && modal && proceedBtn && cancelBtn) {
-    downloadBtn.addEventListener('click', (e) => {
-        // Check if the button is the download button (it should be the first btn-primary)
-        if (e.target.textContent.includes('Download')) {
-            e.preventDefault();
-            modal.classList.add('active');
-        }
+let targetDownloadUrl = '';
+
+if (modal && proceedBtn && cancelBtn) {
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Check if the button is a download button
+            if (e.target.textContent.includes('Download')) {
+                e.preventDefault();
+                targetDownloadUrl = e.currentTarget.href;
+                modal.classList.add('active');
+            }
+        });
     });
 
     proceedBtn.addEventListener('click', () => {
-        window.location.href = downloadBtn.href;
+        if (targetDownloadUrl) {
+            window.location.href = targetDownloadUrl;
+        }
         modal.classList.remove('active');
     });
 
     cancelBtn.addEventListener('click', () => {
         modal.classList.remove('active');
+        targetDownloadUrl = '';
     });
 
     // Close on click outside
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('active');
+            targetDownloadUrl = '';
         }
     });
 }
