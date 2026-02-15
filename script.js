@@ -70,7 +70,7 @@ setInterval(updateCarousel, 4000);
 
 // SmartScreen Modal Logic
 // SmartScreen Modal Logic
-const downloadBtns = document.querySelectorAll('.btn-primary');
+const downloadBtns = document.querySelectorAll('a.btn-primary');
 const modal = document.getElementById('smartscreen-modal');
 const proceedBtn = document.getElementById('proceed-download');
 const cancelBtn = document.getElementById('cancel-download');
