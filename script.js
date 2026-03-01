@@ -109,3 +109,29 @@ if (modal && proceedBtn && cancelBtn) {
         }
     });
 }
+
+// Fetch latest WeatherLight release from GitHub
+async function updateWeatherLightDownloadLink() {
+    try {
+        const response = await fetch('https://api.github.com/repos/jonkt/weatherlight/releases/latest');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const releaseData = await response.json();
+
+        // Find the .exe asset
+        const exeAsset = releaseData.assets.find(asset => asset.name.endsWith('.exe'));
+
+        if (exeAsset) {
+            const downloadBtn = document.getElementById('weatherlight-download-btn');
+            if (downloadBtn) {
+                downloadBtn.href = exeAsset.browser_download_url;
+                // Parse version tag and update button text
+                const version = releaseData.tag_name || releaseData.name;
+                downloadBtn.textContent = `Download WeatherLight ${version} (Windows Only)`;
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching latest WeatherLight release:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateWeatherLightDownloadLink);
