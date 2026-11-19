@@ -69,7 +69,6 @@ updateCarousel();
 setInterval(updateCarousel, 4000);
 
 // SmartScreen Modal Logic
-// SmartScreen Modal Logic
 const downloadBtns = document.querySelectorAll('a.btn-primary');
 const modal = document.getElementById('smartscreen-modal');
 const proceedBtn = document.getElementById('proceed-download');
@@ -81,7 +80,7 @@ if (modal && proceedBtn && cancelBtn) {
     downloadBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             // Check if the button is a download button
-            if (e.target.textContent.includes('Download')) {
+            if (e.currentTarget.textContent.includes('Download')) {
                 e.preventDefault();
                 targetDownloadUrl = e.currentTarget.href;
                 modal.classList.add('active');

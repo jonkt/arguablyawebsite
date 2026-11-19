@@ -16,7 +16,6 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
@@ -142,7 +141,6 @@ main {
     padding: 0 2rem;
 }
 
-/* Product Section */
 /* Product Section */
 .product-showcase {
     display: grid;
@@ -526,6 +524,25 @@ main {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
+}
+
+.tooltip-text::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 24px;
+}
+
+.tooltip-text a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.tooltip-text a:hover {
+    color: var(--text-color);
 }
 
 /* Tooltip Arrow */
