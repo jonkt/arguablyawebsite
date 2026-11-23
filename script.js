@@ -34,39 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 });
-// Carousel Logic
-const cards = document.querySelectorAll('.carousel-card');
-let currentIndex = 0;
+// Carousel Logic (supports multiple independent product carousels)
+document.querySelectorAll('.carousel-container').forEach((container) => {
+    const cards = container.querySelectorAll('.carousel-card');
+    if (cards.length === 0) return;
+    let currentIndex = 0;
 
-function updateCarousel() {
-    cards.forEach((card, index) => {
-        // Reset classes
-        card.className = 'carousel-card';
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            card.className = 'carousel-card';
+            const offset = (index - currentIndex + cards.length) % cards.length;
+            if (offset === 0) {
+                card.classList.add('active');
+            } else if (offset === 1) {
+                card.classList.add('next');
+            } else if (offset === 2) {
+                card.classList.add('next-2');
+            } else {
+                card.classList.add('next-3');
+                if (offset > 3) card.style.opacity = '0';
+            }
+        });
+        currentIndex = (currentIndex + 1) % cards.length;
+    }
 
-        // Calculate offset from current index
-        let offset = (index - currentIndex + cards.length) % cards.length;
-
-        if (offset === 0) {
-            card.classList.add('active');
-        } else if (offset === 1) {
-            card.classList.add('next');
-        } else if (offset === 2) {
-            card.classList.add('next-2');
-        } else {
-            card.classList.add('next-3');
-            // Hide others or stack them far back
-            if (offset > 3) card.style.opacity = '0';
-        }
-    });
-
-    currentIndex = (currentIndex + 1) % cards.length;
-}
-
-// Initial set
-updateCarousel();
-
-// Auto-cycle every 4 seconds
-setInterval(updateCarousel, 4000);
+    updateCarousel();
+    if (cards.length > 1) {
+        setInterval(updateCarousel, 4000);
+    }
+});
 
 // SmartScreen Modal Logic
 const downloadBtns = document.querySelectorAll('a.btn-primary');
@@ -134,3 +130,26 @@ async function updateWeatherLightDownloadLink() {
 }
 
 document.addEventListener('DOMContentLoaded', updateWeatherLightDownloadLink);
+
+// Fetch latest DeepPhoto Studio release from GitHub
+async function updateDeepPhotoDownloadLink() {
+    try {
+        const response = await fetch('https://api.github.com/repos/jonkt/DeepPhoto/releases/latest');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const releaseData = await response.json();
+
+        const exeAsset = releaseData.assets.find(asset => asset.name.endsWith('.exe'));
+        if (exeAsset) {
+            const downloadBtn = document.getElementById('deepphoto-download-btn');
+            if (downloadBtn) {
+                downloadBtn.href = exeAsset.browser_download_url;
+                const version = releaseData.tag_name || releaseData.name;
+                downloadBtn.textContent = `Download DeepPhoto Studio ${version} (Windows Only)`;
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching latest DeepPhoto Studio release:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateDeepPhotoDownloadLink);

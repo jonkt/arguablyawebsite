@@ -36,6 +36,10 @@
                 <img src="assets/weatherlight_icon.png" alt="WeatherLight">
                 <span>WeatherLight</span>
             </a>
+            <a href="#deepphoto" class="app-nav-item">
+                <img src="assets/deepphoto_icon.png" alt="DeepPhoto Studio">
+                <span>DeepPhoto</span>
+            </a>
         </nav>
     </header>
 
@@ -189,6 +193,87 @@
             <div class="product-visual">
                 <img src="assets/Busylight-GIF.gif" alt="WeatherLight Demo"
                     style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="product-showcase" id="deepphoto">
+            <div class="product-bg-container"
+                style="background: radial-gradient(circle at center, rgba(245, 158, 11, 0.1), transparent 70%);"></div>
+            <div class="product-content">
+                <div class="product-badge"
+                    style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">Open Source · GPL-3.0
+                </div>
+                <h2 class="product-title">DeepPhoto Studio</h2>
+                <h3 class="product-subtitle">Turn any photo into a 3D-printable relief.</h3>
+                <p class="product-description">
+                    Convert portraits, pets, and landscapes (HEIC, JPG, PNG) into watertight, print-ready
+                    bas-relief STL plaques or multi-color Bambu Studio 3MF assemblies—sculpted locally with AI depth.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h4>Local AI Depth</h4>
+                        <p>Automatic DirectML GPU acceleration (NVIDIA, AMD, Intel) with multi-core CPU fallback.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🖨️</div>
+                        <h4>Multi-Color .3MF</h4>
+                        <p>Exports watertight meshes with separate AMS filament parts for plaques and 3D captions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🖼️</div>
+                        <h4>Frames &amp; 3D Text</h4>
+                        <p>Sculpt beveled, flat, or rounded border frames with raised or flush-inlay 3D typography.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h4>Single Portable App</h4>
+                        <p>Zero Python setup—just run the portable .exe or drag a photo straight onto it via CLI.</p>
+                    </div>
+                </div>
+
+                <div class="cta-container">
+                    <a href="https://github.com/jonkt/DeepPhoto/releases/download/v1.0.0/DeepPhotoStudio-1.0.0.exe"
+                        id="deepphoto-download-btn" class="btn btn-primary">Download DeepPhoto Studio v1.0.0 (Windows
+                        Only)</a>
+
+                    <div class="tooltip-container">
+                        <button class="btn btn-secondary tooltip-trigger">How does the AI work?</button>
+                        <div class="tooltip-text">
+                            DeepPhoto Studio runs 100% locally on your PC—your photos never leave your device. On first
+                            run, it downloads the open-source Depth Anything V2 model once to your local cache (~370 MB)
+                            and fuses depth with edge-preserving luminance detail.
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/jonkt/DeepPhoto/" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-visual">
+                <div class="carousel-container">
+                    <div class="carousel-card" style="--i:0">
+                        <img src="assets/deepphoto_3d.png" alt="DeepPhoto Studio 3D Relief">
+                    </div>
+                    <div class="carousel-card" style="--i:1">
+                        <img src="assets/deepphoto_split.png" alt="DeepPhoto Studio Split Compare">
+                    </div>
+                    <div class="carousel-card" style="--i:2">
+                        <img src="assets/deepphoto_depth.png" alt="DeepPhoto Studio AI Depth">
+                    </div>
+                </div>
             </div>
         </section>
     </main>

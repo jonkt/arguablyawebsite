@@ -92,7 +92,8 @@ html {
 .app-nav {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     margin: 2rem 0;
 }
 
